@@ -1,0 +1,7 @@
+<h1>Recipes</h1>
+
+<ul>
+    <% @recipes.sort_by{|recipe| recipe.ingredients.count * -1}.each do |recipe|%>
+        <li><%=link_to recipe.name, recipe_path(recipe)%><%=" - #{recipe.ingredients.count} ingredient(s)"%></li>
+    <%end%>
+</ul>

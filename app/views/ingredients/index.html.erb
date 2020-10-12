@@ -1,0 +1,7 @@
+<h1>ALL OF THE INGREEEEEdients</h1>
+
+<ul>
+    <% @ingredients.sort_by{|ingredient| ingredient.allergens.count * -1}.each do |ingredient|%>
+        <%= link_to ingredient.name, ingredient_path(ingredient)%><%=" - allergic users #{ingredient.allergens.count}"%><br>
+    <%end%>
+</ul>
